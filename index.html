@@ -13,20 +13,21 @@
 <meta property="og:description" content="香港繪畫工作室，自 2006 年。繪畫不只是技巧的學習，更是一場自我探索的旅程。">
 <meta property="og:image" content="assets/og-image.jpg">
 <meta property="og:url" content="https://www.aworkshop2006.com/">
-<meta name="theme-color" content="#12100e">
+<meta name="theme-color" content="#1a1109">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2312100e'/><text x='50' y='50' font-size='58' font-family='serif' fill='%23f4f1ea' text-anchor='middle' dominant-baseline='central'>壹</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a1109'/><text x='50' y='50' font-size='58' font-family='serif' fill='%23f6eddc' text-anchor='middle' dominant-baseline='central'>壹</text></svg>">
 
 <style>
   :root{
-    --paper:#f4f1ea;      /* warm off-white / canvas */
-    --paper-2:#ece7dc;    /* slightly deeper panel */
-    --ink:#1c1a17;        /* warm near-black text */
-    --ink-soft:#6b655c;   /* muted secondary */
-    --line:#dcd5c7;       /* hairline */
-    --clay:#a2664a;       /* single warm accent */
-    --clay-deep:#8a533b;
-    --black:#12100e;      /* hero black / footer */
+    --paper:#f6eddc;      /* warm cream — the light in the studio */
+    --paper-2:#efe3cd;    /* deeper warm panel */
+    --ink:#261d12;        /* warm brown-black text */
+    --ink-soft:#786a54;   /* warm taupe */
+    --line:#e6d9c0;       /* warm hairline */
+    --clay:#b4682f;       /* warm terracotta / amber accent */
+    --clay-deep:#8f4f20;
+    --amber:#e2a463;      /* soft glow accent for dark sections */
+    --black:#1a1109;      /* warm near-black (dark sections / footer) */
 
     --serif: Georgia, 'Times New Roman', 'Songti TC', 'Songti SC', 'SimSun', serif;
     --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'PingFang SC', 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
@@ -65,7 +66,7 @@
     transition:background .4s ease, color .4s ease, box-shadow .4s ease, padding .4s ease;
   }
   .topbar.scrolled{
-    background:rgba(244,241,234,.92);
+    background:rgba(246, 237, 220,.92);
     -webkit-backdrop-filter:saturate(140%) blur(8px);
     backdrop-filter:saturate(140%) blur(8px);
     color:var(--ink);
@@ -91,13 +92,14 @@
   .hero{position:relative;height:100svh;min-height:560px;background:var(--black);overflow:hidden}
   .hero video{
     position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-    /* start hidden, fade the video layer in so the black poster→light feels alive */
+    filter:saturate(1.08) contrast(1.02);   /* lift the studio's warmth a touch */
   }
   .hero .scrim{
     position:absolute;inset:0;
     background:
-      linear-gradient(to bottom, rgba(18,16,14,.45) 0%, rgba(18,16,14,0) 22%),
-      linear-gradient(to top, rgba(18,16,14,.75) 0%, rgba(18,16,14,.15) 40%, rgba(18,16,14,0) 65%);
+      radial-gradient(70% 55% at 50% 6%, rgba(226,164,99,.20), transparent 62%),
+      linear-gradient(to bottom, rgba(26, 17, 9,.45) 0%, rgba(26, 17, 9,0) 22%),
+      linear-gradient(to top, rgba(26, 17, 9,.78) 0%, rgba(26, 17, 9,.18) 40%, rgba(26, 17, 9,0) 65%);
     pointer-events:none;
   }
   .hero-inner{
@@ -118,7 +120,7 @@
   }
   .hero-sub{
     margin-top:1.4rem;max-width:34ch;font-size:clamp(1rem,2.4vw,1.22rem);
-    color:rgba(244,241,234,.9);text-shadow:0 1px 24px rgba(0,0,0,.6);
+    color:rgba(246, 237, 220,.9);text-shadow:0 1px 24px rgba(0,0,0,.6);
   }
   .hero-sub .en{display:block;font-size:.86em;opacity:.72;margin-top:.15em}
 
@@ -154,7 +156,7 @@
   p:last-child{margin-bottom:0}
 
   /* Intro / philosophy */
-  .intro{text-align:center;background:var(--paper)}
+  .intro{text-align:center;background:radial-gradient(90% 120% at 50% -10%, #fbf3e2 0%, var(--paper) 55%)}
   .intro .quote{
     font-family:var(--serif);font-weight:400;
     font-size:clamp(1.6rem,4.2vw,2.7rem);line-height:1.4;
@@ -221,19 +223,22 @@
   .svc p{color:var(--ink-soft);font-size:.95rem;margin-top:.6rem}
 
   /* About */
-  .about{background:var(--black);color:var(--paper)}
+  .about{background:
+      radial-gradient(80% 90% at 88% 0%, rgba(180,104,47,.22), transparent 55%),
+      var(--black);
+    color:var(--paper)}
   .about h2{color:var(--paper)}
-  .about h2 .en{color:rgba(244,241,234,.5)}
-  .about .eyebrow{color:#d59774}
+  .about h2 .en{color:rgba(246, 237, 220,.5)}
+  .about .eyebrow{color:#e2a463}
   .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:start}
   @media (max-width:800px){.about-grid{grid-template-columns:1fr;gap:3rem}}
-  .about p{color:rgba(244,241,234,.82);font-size:1.05rem}
+  .about p{color:rgba(246, 237, 220,.82);font-size:1.05rem}
   .about .lead{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--paper);line-height:1.5;margin-bottom:1.6rem}
   .timeline{list-style:none}
-  .timeline li{display:flex;gap:1.2rem;padding:1rem 0;border-top:1px solid rgba(244,241,234,.16);font-size:.95rem}
+  .timeline li{display:flex;gap:1.2rem;padding:1rem 0;border-top:1px solid rgba(246, 237, 220,.16);font-size:.95rem}
   .timeline li:first-child{border-top:0}
-  .timeline .yr{font-family:var(--serif);color:#d59774;min-width:3.2em;flex:none}
-  .timeline .ev{color:rgba(244,241,234,.85)}
+  .timeline .yr{font-family:var(--serif);color:#e2a463;min-width:3.2em;flex:none}
+  .timeline .ev{color:rgba(246, 237, 220,.85)}
 
   /* Visit / contact */
   .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem)}
@@ -263,13 +268,13 @@
   .btn svg{width:1.1em;height:1.1em;fill:currentColor}
 
   /* Footer */
-  footer{background:var(--black);color:rgba(244,241,234,.7);padding-block:3.5rem;font-size:.88rem}
+  footer{background:var(--black);color:rgba(246, 237, 220,.7);padding-block:3.5rem;font-size:.88rem}
   .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:2rem}
   footer .brand{color:var(--paper)}
   footer .socials{display:flex;gap:1.4rem}
   footer .socials a{text-decoration:none;opacity:.8;transition:opacity .2s}
-  footer .socials a:hover{opacity:1;color:#d59774}
-  footer .fine{width:100%;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid rgba(244,241,234,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:rgba(244,241,234,.5)}
+  footer .socials a:hover{opacity:1;color:#e2a463}
+  footer .fine{width:100%;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid rgba(246, 237, 220,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:rgba(246, 237, 220,.5)}
 
   /* Scroll-in for content sections */
   .fade{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -296,8 +301,10 @@
 <!-- ===== Hero ===== -->
 <section class="hero" id="top">
   <video id="heroVideo" poster="assets/video/poster.jpg" autoplay muted playsinline preload="auto" aria-hidden="true">
-    <source src="assets/video/studio.v2.webm" type="video/webm">
-    <source src="assets/video/studio.v2.mp4" type="video/mp4">
+    <!-- Highest-quality H.264, served by viewport: desktop / iPad / mobile -->
+    <source src="assets/video/studio-lg.mp4" type="video/mp4" media="(min-width:1025px)">
+    <source src="assets/video/studio-md.mp4" type="video/mp4" media="(min-width:601px)">
+    <source src="assets/video/studio-sm.mp4" type="video/mp4">
   </video>
   <div class="scrim"></div>
   <div class="hero-inner">
@@ -325,7 +332,7 @@
 
 <!-- ===== Studio band ===== -->
 <div class="band" role="img" aria-label="壹閣工作室內部：石膏像、畫架、學生作品與植物。The studio interior — plaster casts, easels, paintings and plants.">
-  <img src="assets/studio.jpg" alt="" loading="lazy">
+  <img src="assets/studio-still.jpg" alt="" loading="lazy">
   <div class="cap">一室之內，光影、石膏與顏料。<span class="en" style="display:block;font-size:.6em;opacity:.8;letter-spacing:.02em;margin-top:.3em">Light, plaster and pigment, in one quiet room.</span></div>
 </div>
 

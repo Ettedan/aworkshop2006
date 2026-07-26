@@ -295,7 +295,7 @@
 
 <!-- ===== Hero ===== -->
 <section class="hero" id="top">
-  <video id="heroVideo" poster="assets/video/poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+  <video id="heroVideo" poster="assets/video/poster.jpg" autoplay muted playsinline preload="auto" aria-hidden="true">
     <source src="assets/video/studio.webm" type="video/webm">
     <source src="assets/video/studio.mp4" type="video/mp4">
   </video>
@@ -517,6 +517,12 @@
     function lightsOn(){ hero.classList.add('lit'); }
     if(vid){
       vid.addEventListener('playing', function(){ setTimeout(lightsOn, 300); }, {once:true});
+      // play once, then hold on the last (lit) frame
+      vid.addEventListener('ended', function(){
+        vid.pause();
+        // pin to the final frame in case a browser rewinds on end
+        if(vid.duration){ try{ vid.currentTime = Math.max(0, vid.duration - 0.05); }catch(e){} }
+      });
       // attempt play (some browsers need the nudge)
       var p = vid.play && vid.play();
       if(p && p.catch){ p.catch(function(){}); }
